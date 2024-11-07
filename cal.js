@@ -3,12 +3,18 @@ const buttons=document.querySelectorAll('button');
 const resetButton = document.getElementById('resetButton');
 
 
-function sendnumbervalue(number){
+function sendNumberValue(number){
     console.log(number);
 }
+    
 
-buttons.forEach((button)=>{
+
+buttons.forEach((button) => {
     if(button.classList.length === 0){
-        button.addEventListener('click'()=>sendnumbervalue(button.value))
+        button.addEventListener('click', () => sendNumberValue(button.value));
+    } 
+    else if (button.classList.contains('operator')){
+        button.addEventListener('click', () => sendNumberValue(button.value));
+
     }
-})
+});
